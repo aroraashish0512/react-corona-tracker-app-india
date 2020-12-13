@@ -88,7 +88,7 @@ export default function HomePageComponent() {
 
 <div className="container">
     Note: App data may be differ due to API sync. API sync with actual data in every 5-6 hours.<br/>
-    Click on each row if you want to check your city status. In next page all city will be listed of that particular state</div>
+    </div>
 
                 <div className="data-table">
                     <table className="table table-hover">
@@ -104,8 +104,8 @@ export default function HomePageComponent() {
                             {/* {window.console.log(stateData, '109')} */}
                             {
                                 stateData.map(sd => {
-                                    return (<tr key={sd.state} onClick={rowClick}>
-                                        <td>{sd.state}</td>
+                                    return (<tr key={sd.state}>
+                                        <td><Link to={"/State/"+sd.state}>{sd.state}</Link></td>
                                         <td>{sd.active}</td>
                                         <td>{sd.confirmed}</td>
                                         <td>{sd.deceased}</td>
