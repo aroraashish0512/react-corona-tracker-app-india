@@ -5,9 +5,6 @@ const DATA_URL = 'https://api.covid19india.org/state_district_wise.json';
 
 
 export default function State() {
-    // constructor() {
-    //     super();
-    // }
     const stateCode = useParams().stateCode;
 
     const [districtData, setData] = useState([]);

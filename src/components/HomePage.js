@@ -7,11 +7,6 @@ const DATA_URL = 'https://api.covid19india.org/state_district_wise.json';
 
 
 export default function HomePageComponent() {
-    // constructor() {
-    //     super();
-    // }
-
-    const [districtData, setData] = useState([]);
     const [stateData, setStateData] = useState([]);
     const history = useHistory();
 
@@ -29,7 +24,6 @@ export default function HomePageComponent() {
                 return response.json();
             })
             .then((data) => {
-                setData(data);
                 setSData(data);
             })
             .catch((error) => {
@@ -43,12 +37,12 @@ export default function HomePageComponent() {
             Object.keys(data).forEach(s => {
                 if (s !== 'State Unassigned') {
                     if (data[s]['districtData']) {
-                        const stateObj = {
-                            state: s,
-                            active: 0,
-                            deceased: 0,
-                            confirmed: 0
-                        };
+                        // const stateObj = {
+                        //     state: s,
+                        //     active: 0,
+                        //     deceased: 0,
+                        //     confirmed: 0
+                        // };
                         let active = 0;
                         let deceased = 0;
                         let confirmed = 0;
@@ -76,7 +70,6 @@ export default function HomePageComponent() {
         } else {
             alert('There are some error, Please try later');
         }
-        //console.log('The link was clicked.');
       }
 
     if (stateData) {
@@ -101,7 +94,6 @@ export default function HomePageComponent() {
                             </tr>
                         </thead>
                         <tbody>
-                            {/* {window.console.log(stateData, '109')} */}
                             {
                                 stateData.map(sd => {
                                     return (<tr key={sd.state}>

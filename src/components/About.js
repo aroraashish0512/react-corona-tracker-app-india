@@ -1,21 +1,8 @@
 import React, { useState, useEffect } from 'react';
-// import { Redirect, BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import Navigation from './Navigation';
 const DATA_URL = 'https://api.covid19india.org/website_data.json';
 
 export default function About() {
-    // constructor() {
-    //     super();
-    // }
-
-    // render() {
-    //     return (
-    //         <React.Fragment>
-    //             <Navigation></Navigation>
-    //             about
-    //         </React.Fragment>
-    //     )
-    // }
 
     const [qa, setQa] = useState([]);
 
