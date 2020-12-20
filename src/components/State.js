@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Redirect, BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import Navigation from './Navigation';
 const DATA_URL = 'https://api.covid19india.org/state_district_wise.json';
 
@@ -51,7 +51,6 @@ export default function State() {
                             </tr>
                         </thead>
                         <tbody>
-                            {/* { districtData['districtData'] ? console.log(districtData['districtData'], '53') : } */}
                             {
                                 districtData['districtData'] ? Object.keys(districtData['districtData']).map(firstKey => {
                                     return (
